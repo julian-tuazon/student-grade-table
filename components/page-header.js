@@ -1,7 +1,6 @@
 class PageHeader {
-  constructor(headerElement, pageHeader) {
+  constructor(headerElement) {
     this.headerElement = headerElement;
-    this.pageHeader = pageHeader;
   }
   updateAverage(newAverage) {
     console.log(newAverage);
