@@ -8,22 +8,58 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <title>Document</title>
 </head>
-<body class="mx-auto col-11">
-  <header class="row justify-content-between">
-    <h1 class="mt-5 mb-4 ml-3">Student Grade Table</h1>
-    <h2 class="mt-5 mb-4">Average Grade <span class="badge badge-secondary mr-3"></span></h2>
-  </header>
-  <table class="table table-striped col-8">
-    <thead>
-      <tr>
-        <th class="pt-4" scope="col">Name</th>
-        <th class="pt-4" scope="col">Course</th>
-        <th class="pt-4" scope="col">Grade</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
+<body>
+  <div class="container mx-auto col-11">
+    <header class="row justify-content-between">
+      <h1 class="mt-5 mb-4">Student Grade Table</h1>
+      <h2 class="mt-5 mb-4">Average Grade <span class="badge badge-secondary"></span></h2>
+    </header>
+    <div class="row">
+      <table class="table table-striped col-8">
+        <thead>
+          <tr>
+            <th class="pt-4" scope="col">Name</th>
+            <th class="pt-4" scope="col">Course</th>
+            <th class="pt-4" scope="col">Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <form action="" class="col-4">
+        <fieldset>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="name-symbol"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="text" class="form-control" name="name" placeholder="Student Name" aria-label="Name"
+                aria-describedby="name-symbol">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="list-symbol"><i class="far fa-list-alt"></i></span>
+              </div>
+              <input type="text" class="form-control" name="course" placeholder="Student Course" aria-label="Course" aria-describedby="list-symbol">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="grad-symbol"><i class="fas fa-graduation-cap"></i></span>
+              </div>
+              <input type="text" class="form-control" name="grade" placeholder="Student Grade" aria-label="Grade"
+                aria-describedby="grad-symbol">
+            </div>
+            <div class="row justify-content-end">
+              <button type="submit">Add</button>
+              <button type="reset">Cancel</button>
+            </div>
+          </div>
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
   <script src="components/app.js"></script>
   <script src="components/grade-table.js"></script>
