@@ -28,7 +28,7 @@ class App {
     let gradeAverage = 0;
     grades.forEach(student => gradeAverage += student.grade);
     gradeAverage /= grades.length;
-    this.pageHeader.updateAverage(gradeAverage.toFixed(2));
+    this.pageHeader.updateAverage(gradeAverage.toFixed(0));
   }
   start() {
     this.getGrades();
