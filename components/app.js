@@ -5,9 +5,12 @@ class App {
   }
   getGrades() {
     $.ajax({
-      url: "/api/grades",
-      success: this.handleGetGradesSuccess;
-      error: this.handleGetGradesError;
+      url: "http://sgt.lfzprototypes.com/api/grades",
+      success: this.handleGetGradesSuccess,
+      error: this.handleGetGradesError,
+      headers: {
+        "X-Access-Token": "i4hbNgAo",
+      }
     });
   }
   handleGetGradesError(error) {
