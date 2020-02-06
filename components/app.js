@@ -22,9 +22,8 @@ class App {
     console.log("grades", grades);
     this.gradeTable.updateGrades(grades);
     let gradeAverage = 0;
-    for (student in grades) {
-      gradeAverage += student.grade;
-    }
+    grades.forEach(student => gradeAverage += student.grade);
+    gradeAverage /= grades.length;
     this.pageHeader.updateAverage(gradeAverage);
   }
   start() {
