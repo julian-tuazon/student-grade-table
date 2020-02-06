@@ -26,8 +26,15 @@ class App {
     grades.forEach(student => gradeAverage += student.grade);
     gradeAverage /= grades.length;
     this.pageHeader.updateAverage(gradeAverage);
+    this.getGrades();
   }
   start() {
     this.getGrades();
+  }
+  createGrade(name, course, grade) {
+    console.log(name, course, grade);
+  }
+  handleCreateGradeError(error) {
+    console.error(error);
   }
 }
