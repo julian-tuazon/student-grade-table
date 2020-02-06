@@ -1,7 +1,6 @@
 class GradeTable {
-  constructor(tableElement, gradeTable) {
+  constructor(tableElement) {
     this.tableElement = tableElement;
-    this.gradeTable = gradeTable;
   }
   updateGrades(grades) {
     console.log(grades);
