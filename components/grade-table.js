@@ -1,25 +1,21 @@
 class GradeTable {
-  constructor(tableElement) {
+  constructor(tableElement, noGradesElement) {
     this.tableElement = tableElement;
     this.deleteGrade = null;
+    this.noGradesElement = noGradesElement;
   }
   updateGrades(grades) {
+    if (grades.length !== 0) {
+      document.querySelector("p.d-none").classList.remove("d-none");
+    } else {
+      document.querySelector("p.d-none").classList.add("d-none");
+    }
     const tbody = this.tableElement.querySelector("tbody");
     while (tbody.firstChild) {
       tbody.removeChild(tbody.firstChild);
     }
     for (let i = 0; i < grades.length; i++) {
-      const student = document.createElement("td");
-      student.textContent = grades[i].name;
-      const course = document.createElement("td");
-      course.textContent = grades[i].course;
-      const grade = document.createElement("td");
-      grade.textContent = grades[i].grade;
-      const tableRow = document.createElement("tr");
-      tableRow.appendChild(student);
-      tableRow.appendChild(course);
-      tableRow.appendChild(grade);
-      tbody.appendChild(tableRow);
+      this.renderGradeRow(grades[i], this.deleteGrade);
     }
   }
   onDeleteClick(deleteGrade) {
