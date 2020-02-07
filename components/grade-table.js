@@ -5,7 +5,7 @@ class GradeTable {
     this.noGradesElement = noGradesElement;
   }
   updateGrades(grades) {
-    if (grades) {
+    if (grades.length !== 0) {
       document.querySelector("p").classList.remove("d-none");
     } else {
       document.querySelector("p").classList.add("d-none");
