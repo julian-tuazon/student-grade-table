@@ -35,7 +35,6 @@ class GradeTable {
     deleteButton.classList.add("btn", "btn-danger");
     deleteElement.appendChild(deleteButton);
     const tableRow = document.createElement("tr");
-    // tableRow.classList.add("row");
     tableRow.appendChild(student);
     tableRow.appendChild(course);
     tableRow.appendChild(grade);
