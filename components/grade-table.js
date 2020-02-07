@@ -34,10 +34,11 @@ class GradeTable {
     const deleteElement = document.createElement("td");
     const deleteButton = document.createElement("button");
     // deleteButton.textContent = "DELETE";
+    // <i class="fas fa-edit"></i>
     const deleteIcon = document.createElement("i");
     deleteIcon.classList.add("fa", "fa-trash");
     deleteButton.appendChild(deleteIcon);
-    deleteButton.classList.add("btn", "btn-danger", "d-block", "ml-auto");
+    deleteButton.classList.add("btn", "red", "d-block", "ml-auto");
     deleteElement.appendChild(deleteButton);
     const tableRow = document.createElement("tr");
     tableRow.appendChild(student);
