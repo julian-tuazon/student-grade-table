@@ -6,9 +6,9 @@ class GradeTable {
   }
   updateGrades(grades) {
     if (grades.length !== 0) {
-      document.querySelector("p").classList.remove("d-none");
-    } else {
       document.querySelector("p").classList.add("d-none");
+    } else {
+      document.querySelector("p").classList.remove("d-none");
     }
     const tbody = this.tableElement.querySelector("tbody");
     while (tbody.firstChild) {
