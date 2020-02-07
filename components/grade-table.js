@@ -5,10 +5,10 @@ class GradeTable {
     this.noGradesElement = noGradesElement;
   }
   updateGrades(grades) {
-    if (grades.length !== 0) {
-      document.querySelector("p.d-none").classList.remove("d-none");
+    if (grades) {
+      document.querySelector("p").classList.remove("d-none");
     } else {
-      document.querySelector("p.d-none").classList.add("d-none");
+      document.querySelector("p").classList.add("d-none");
     }
     const tbody = this.tableElement.querySelector("tbody");
     while (tbody.firstChild) {
