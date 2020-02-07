@@ -39,7 +39,9 @@ class GradeTable {
     tableRow.appendChild(grade);
     tableRow.appendChild(deleteElement);
     tbody.appendChild(tableRow);
-    deleteButton.addEventListener('click', deleteGrade(data.id));
+    deleteButton.addEventListener('click', function() {
+      deleteGrade(data.id);
+    });
     return tableRow;
   }
 }
