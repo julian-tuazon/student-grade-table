@@ -27,12 +27,14 @@ class GradeTable {
     student.textContent = data.name;
     const course = document.createElement("td");
     course.textContent = data.course;
+    course.classList.add("text-center");
     const grade = document.createElement("td");
     grade.textContent = data.grade;
+    grade.classList.add("text-center");
     const deleteElement = document.createElement("td");
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "DELETE";
-    deleteButton.classList.add("btn", "btn-danger");
+    deleteButton.classList.add("btn", "btn-danger", "d-block", "ml-auto");
     deleteElement.appendChild(deleteButton);
     const tableRow = document.createElement("tr");
     tableRow.appendChild(student);
