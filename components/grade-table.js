@@ -1,6 +1,7 @@
 class GradeTable {
   constructor(tableElement) {
     this.tableElement = tableElement;
+    this.deleteGrade = null;
   }
   updateGrades(grades) {
     const tbody = this.tableElement.querySelector("tbody");
@@ -20,5 +21,8 @@ class GradeTable {
       tableRow.appendChild(grade);
       tbody.appendChild(tableRow);
     }
+  }
+  onDeleteClick(deleteGrade) {
+    this.deleteGrade = deleteGrade;
   }
 }
