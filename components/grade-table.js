@@ -22,12 +22,13 @@ class GradeTable {
     this.deleteGrade = deleteGrade;
   }
   renderGradeRow(data, deleteGrade) {
+    const tbody = this.tableElement.querySelector("tbody");
     const student = document.createElement("td");
-    student.textContent = grades[i].name;
+    student.textContent = data.name;
     const course = document.createElement("td");
-    course.textContent = grades[i].course;
+    course.textContent = data.course;
     const grade = document.createElement("td");
-    grade.textContent = grades[i].grade;
+    grade.textContent = data.grade;
     const deleteElement = document.createElement("td");
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "DELETE";
