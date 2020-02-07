@@ -31,20 +31,25 @@ class GradeTable {
     const grade = document.createElement("td");
     grade.textContent = data.grade;
     grade.classList.add("text-center");
+    const operations = document.createElement("td");
+    const updateButton = document.createElement("button");
+    const updateIcon = document.createElement("i");
+    updateIcon.classList.add("fas", "fa-edit");
+    updateButton.appendChild(updateIcon);
+    updateButton.classList.add("btn", "red", "d-block", "ml-auto");
+    operations.appendChild(updateButton);
     const deleteElement = document.createElement("td");
     const deleteButton = document.createElement("button");
-    // deleteButton.textContent = "DELETE";
-    // <i class="fas fa-edit"></i>
     const deleteIcon = document.createElement("i");
     deleteIcon.classList.add("fa", "fa-trash");
     deleteButton.appendChild(deleteIcon);
     deleteButton.classList.add("btn", "red", "d-block", "ml-auto");
-    deleteElement.appendChild(deleteButton);
+    operations.appendChild(deleteButton);
     const tableRow = document.createElement("tr");
     tableRow.appendChild(student);
     tableRow.appendChild(course);
     tableRow.appendChild(grade);
-    tableRow.appendChild(deleteElement);
+    tableRow.appendChild(operations);
     tbody.appendChild(tableRow);
     deleteButton.addEventListener('click', function() {
       deleteGrade(data.id);
