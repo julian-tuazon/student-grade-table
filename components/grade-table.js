@@ -58,6 +58,12 @@ class GradeTable {
     deleteButton.addEventListener('click', function() {
       deleteGrade(data.id);
     });
+    updateButton.addEventListener('click', function() {
+      updateGrade(event);
+    })
     return tableRow;
+  }
+  updateGrade(event) {
+    const row = event.target.parentElement.parentElement.parentElement;
   }
 }
