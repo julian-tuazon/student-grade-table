@@ -37,7 +37,7 @@ class GradeTable {
     const updateIcon = document.createElement("i");
     updateIcon.classList.add("fas", "fa-edit");
     updateButton.appendChild(updateIcon);
-    updateButton.classList.add("btn", "red");
+    updateButton.classList.add("btn", "blue");
     iconContainer.appendChild(updateButton);
     const deleteElement = document.createElement("td");
     const deleteButton = document.createElement("button");
