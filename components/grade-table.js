@@ -2,6 +2,7 @@ class GradeTable {
   constructor(tableElement, noGradesElement) {
     this.tableElement = tableElement;
     this.deleteGrade = null;
+    this.updateGrade = null;
     this.noGradesElement = noGradesElement;
   }
   updateGrades(grades) {
@@ -15,13 +16,16 @@ class GradeTable {
       tbody.removeChild(tbody.firstChild);
     }
     for (let i = 0; i < grades.length; i++) {
-      this.renderGradeRow(grades[i], this.deleteGrade);
+      this.renderGradeRow(grades[i], this.deleteGrade, this.updateGrade);
     }
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade;
   }
-  renderGradeRow(data, deleteGrade) {
+  onUpdateClick(updateGrade) {
+    this.updateGrade = updateGrade;
+  }
+  renderGradeRow(data, deleteGrade, updateGrade) {
     const tbody = this.tableElement.querySelector("tbody");
     const student = document.createElement("td");
     student.textContent = data.name;
@@ -31,20 +35,41 @@ class GradeTable {
     const grade = document.createElement("td");
     grade.textContent = data.grade;
     grade.classList.add("text-center");
+    const operations = document.createElement("td");
+    const iconContainer = document.createElement("div");
+    const updateButton = document.createElement("button");
+    const updateIcon = document.createElement("i");
+    updateIcon.classList.add("fas", "fa-edit");
+    updateButton.appendChild(updateIcon);
+    updateButton.classList.add("btn", "blue");
+    iconContainer.appendChild(updateButton);
     const deleteElement = document.createElement("td");
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "DELETE";
-    deleteButton.classList.add("btn", "btn-danger", "d-block", "ml-auto");
-    deleteElement.appendChild(deleteButton);
+    const deleteIcon = document.createElement("i");
+    deleteIcon.classList.add("fa", "fa-trash");
+    deleteButton.appendChild(deleteIcon);
+    deleteButton.classList.add("btn", "red", "pr-0");
+    iconContainer.appendChild(deleteButton);
+    iconContainer.classList.add("d-inline-block", "ml-auto");
+    operations.appendChild(iconContainer);
+    operations.classList.add("d-flex", "justify-content-end");
     const tableRow = document.createElement("tr");
     tableRow.appendChild(student);
     tableRow.appendChild(course);
     tableRow.appendChild(grade);
-    tableRow.appendChild(deleteElement);
+    tableRow.appendChild(operations);
     tbody.appendChild(tableRow);
     deleteButton.addEventListener('click', function() {
       deleteGrade(data.id);
     });
+    updateButton.addEventListener('click', function() {
+      const formHeader = document.querySelector("fieldset > h4");
+      const submitButton = document.querySelector(".btn-success");
+      formHeader.textContent = "Update Grade";
+      submitButton.textContent = "Update";
+      submitButton.setAttribute("student", data.id);
+    });
     return tableRow;
   }
+
 }

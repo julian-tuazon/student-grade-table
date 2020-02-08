@@ -17,3 +17,11 @@
     flex: 0 0 90%;
   }
 }
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: #17A2B8;
+}
