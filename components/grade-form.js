@@ -16,14 +16,14 @@ class GradeForm {
     const name = formData.get('name');
     const course = formData.get('course');
     const grade = formData.get('grade');
-    const formHeader = document.querySelector("fieldset > h4");
     const submitButton = document.querySelector(".btn-success");
     if (submitButton.textContent === "Add") {
       this.createGrade(name, course, grade);
     } else {
-      this.updateGrade(name, course, grade);
+      this.updateGrade(submitButton.getAttribute("student"), name, course, grade);
       formHeader.textContent = "Add Grade";
       submitButton.textContent = "Add";
+      submitButton.setAttribute("student", "null");
     }
     event.target.reset();
   }

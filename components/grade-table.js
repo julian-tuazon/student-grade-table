@@ -67,9 +67,7 @@ class GradeTable {
       const submitButton = document.querySelector(".btn-success");
       formHeader.textContent = "Update Grade";
       submitButton.textContent = "Update";
-      updateGrade(data.id);
-      // formHeader.textContent = "Add Grade";
-      // submitButton.textContent = "Add";
+      submitButton.setAttribute("student", data.id);
     });
     return tableRow;
   }

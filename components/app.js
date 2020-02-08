@@ -83,7 +83,7 @@ class App {
   handleDeleteGradeSuccess() {
     this.getGrades();
   }
-  updateGrade(id) {
+  updateGrade(id, name, course, grade) {
     console.log(id);
     $.ajax({
       method: "PATCH",
@@ -94,9 +94,9 @@ class App {
         "X-Access-Token": "i4hbNgAo",
       },
       data: {
-        "name": "Jane Doe",
-        "course": "Math 101",
-        "grade": 100
+        "name": `${name}`,
+        "course": `${course}`,
+        "grade": `${grade}`
       }
     });
   }
