@@ -16,7 +16,7 @@ class GradeTable {
       tbody.removeChild(tbody.firstChild);
     }
     for (let i = 0; i < grades.length; i++) {
-      this.renderGradeRow(grades[i], this.deleteGrade);
+      this.renderGradeRow(grades[i], this.deleteGrade, this.updateGrade);
     }
   }
   onDeleteClick(deleteGrade) {
@@ -25,7 +25,7 @@ class GradeTable {
   onUpdateClick(updateGrade) {
     this.updateGrade = updateGrade;
   }
-  renderGradeRow(data, deleteGrade) {
+  renderGradeRow(data, deleteGrade, updateGrade) {
     const tbody = this.tableElement.querySelector("tbody");
     const student = document.createElement("td");
     student.textContent = data.name;
@@ -63,11 +63,9 @@ class GradeTable {
       deleteGrade(data.id);
     });
     updateButton.addEventListener('click', function() {
-      updateGrade(event);
+      updateGrade(data.id);
     })
     return tableRow;
   }
-  updateGrade(event) {
-    const row = event.target.parentElement.parentElement.parentElement;
-  }
+
 }

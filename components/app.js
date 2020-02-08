@@ -92,6 +92,11 @@ class App {
       error: this.handleUpdateGradeError,
       headers: {
         "X-Access-Token": "i4hbNgAo",
+      },
+      data: {
+        "name": "Jane Doe",
+        "course": "Math 101",
+        "grade": 100
       }
     });
   }
