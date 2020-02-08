@@ -63,8 +63,12 @@ class GradeTable {
       deleteGrade(data.id);
     });
     updateButton.addEventListener('click', function() {
+      const formHeader = document.querySelector("fieldset > h4");
+      const submitButton = document.querySelector(".btn-success");
+      formHeader.textContent = "Update Grade";
+      submitButton.textContent = "Update";
       updateGrade(data.id);
-    })
+    });
     return tableRow;
   }
 
