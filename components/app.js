@@ -38,7 +38,7 @@ class App {
   }
   start() {
     this.getGrades();
-    this.gradeForm.onSubmit(this.createGrade);
+    this.gradeForm.onSubmit(this.createGrade, this.updateGrade);
     this.gradeTable.onDeleteClick(this.deleteGrade);
     this.gradeTable.onUpdateClick(this.updateGrade);
   }

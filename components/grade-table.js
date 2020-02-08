@@ -68,6 +68,8 @@ class GradeTable {
       formHeader.textContent = "Update Grade";
       submitButton.textContent = "Update";
       updateGrade(data.id);
+      // formHeader.textContent = "Add Grade";
+      // submitButton.textContent = "Add";
     });
     return tableRow;
   }
