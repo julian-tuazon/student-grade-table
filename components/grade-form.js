@@ -22,6 +22,8 @@ class GradeForm {
       this.createGrade(name, course, grade);
     } else {
       this.updateGrade(name, course, grade);
+      formHeader.textContent = "Add Grade";
+      submitButton.textContent = "Add";
     }
     event.target.reset();
   }
